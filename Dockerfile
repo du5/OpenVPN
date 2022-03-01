@@ -15,4 +15,4 @@ RUN apt update\
 
 COPY openvpn.ovpn vpn.pass /root/
 
-ENTRYPOINT /usr/sbin/sshd && openvpn --config openvpn.ovpn --daemon && proxy
+ENTRYPOINT /usr/sbin/sshd && openvpn --config openvpn.ovpn --daemon && proxy http
