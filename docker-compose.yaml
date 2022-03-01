@@ -3,6 +3,9 @@ version: "3"
 services:
   openvpn:
     restart: always
+    privileged: true
+    cap_add:
+      - NET_ADMIN
     build: .
     environment:
       - TZ=Asia/Shanghai
