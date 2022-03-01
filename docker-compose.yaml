@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  openvpn:
+    restart: always
+    build: .
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 127.0.0.1:81:22
+      - 127.0.0.1:33080:33080
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "3"
+        max-size: 1m
